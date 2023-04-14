@@ -1,4 +1,6 @@
 import React from "react"
+import StarIcon from "../pageImg/star.png"
+
 
 export default function Dashboard() {
     return (
@@ -13,7 +15,7 @@ export default function Dashboard() {
             </div>
             <div className="dashboard-stars-container">
                 <span>Review score</span>
-                <img src="img/Star.png" />
+                <img src={StarIcon} />
                 <span>5.0/5</span>
             </div>
         </div>
