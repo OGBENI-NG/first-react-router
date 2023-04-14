@@ -1,31 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import VanLife from './pages/VanLife';
-import About from './pages/About';
-import Van from './pages/Van';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import "./server"
+import Vans from './pages/vans/Vans'
+import VanDetails from './pages/vans/VanDetails'
+import Layouts from './components/Layouts'
+import Dashboard from './pages/host/Dashboard'
+import Income from './pages/host/Income'
+import Reviews from './pages/host/Reviews'
+import HostLayouts from './components/HostLayouts'
 
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to='/'>#vanlife</Link>
-        <Link to="/about">About</Link>
-        <Link to='/van'>Van</Link>
-      </nav>
+      
       <Routes>
-        <Route path='/'element={<VanLife />}/>
-        <Route path='/about'element={<About />}/>
-        <Route path='/van'element={<Van />}/>
+        {/* nested route for header and footer */}
+        <Route path='/' element={<Layouts />}>
+          <Route index element={<Home />}/>
+          <Route path='about'element={<About />}/>
+          
+          {/* vans route details id */}
+          <Route path='vans'>
+            <Route index element={<Vans />}/>
+            <Route path=':id'element={<VanDetails />}/>
+          </Route>
+
+          {/* nested route for host-layouts, dashboard, income and review path.*/}
+          <Route path='host' element={<HostLayouts />}>
+            <Route index element={<Dashboard />} />
+            <Route path='income' element={<Income />} />
+            <Route path='reviews' element={<Reviews />} />
+          </Route>
+          
+        </Route>
       </Routes>
     </BrowserRouter>
   )
 }
 
-
-
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <App />,
-);
+  <App />
+)

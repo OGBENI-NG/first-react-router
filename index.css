@@ -5,20 +5,37 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
+    background: #FFF7ED;
+}
+body {
+    position: relative;
+    height: max-content;
+}
+main {
+    margin-bottom: 84px;
 }
 
 nav {
     display: flex;
     align-items: center;
-    padding: 35px 25px;
+    padding: 35px 20px;
     background-color: #FFF7ED;
 }
+a, button {
+    cursor: pointer;
+    text-decoration: none;
+    color: #161616;
+}
+
 nav a {
     text-decoration: none;
     color: #4D4D4D;
     font-size: 16px;
     
+}
+nav a {
+    font-weight: 600;
 }
 
 nav a:nth-of-type(1) {
@@ -31,10 +48,14 @@ nav a:nth-of-type(2) {
     margin: 0 0 0 auto;
     padding-right: 12px;
 }
+nav a:nth-of-type(3) {
+    padding-right: 12px;
+}
 nav a:nth-of-type(2):hover, 
-nav a:nth-of-type(3):hover {
+nav a:nth-of-type(3):hover,
+nav a:nth-of-type(4):hover {
     color: #161616;
-    font-weight: 600;
+    text-decoration: underline;
 }
 .intro-page {
     background-image: url('img/image1.png');
@@ -43,7 +64,7 @@ nav a:nth-of-type(3):hover {
     background-position: center;
     background-size: cover;
     object-fit: cover;
-    padding: 65px 26px;
+    padding: 65px 20px;
    
     width: 100%;
 }
@@ -59,26 +80,206 @@ nav a:nth-of-type(3):hover {
     line-height: 24px;
     margin-bottom: 0;
 }
-.intro-page button {
+.intro-page a {
+    display: block;
     background: #FF8C38;
     border-radius: 5px;
-    border: none;
     width: 100%;
     padding: 8px;
     text-align: center;
     margin-top: 50px;
     font-weight: 500;
     color: #FFFFFF;
+    text-decoration: none;
+}
+.about-pic {
+    display: block;
+    margin-bottom: 0;
 }
 
-footer {
-    background-color: #252525;
-    padding: 25px;
-   
-    margin: 0 0 auto 0;
+.about--container {
+    padding: 48px 26px;
 }
-a, button {
-    cursor: pointer;
+.about--container h1 {
+    font-weight: 700;
+    font-size: 32px;
+    color: #161616
+}
+/* Van section */
+.vans-pre-setup img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+.van-main-container {
+    padding-inline: 23px
+}
+.vans-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 34px;
+    margin-top: 57px;
+}
+
+.vans-names-container .van--name {
+    font-weight: 600;
+    font-size: 20px;
+    color: #161616;
+}
+.van-type {
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.van-type:hover {
+    color: #FFEAD0;
+}
+
+.van-type:focus {
+    outline: none;
+}
+
+.van-type.selected {
+    color: #FFEAD0;
+}
+
+.van-type.simple:hover, .van-type.simple.selected {
+    background-color: #E17654;
+}
+
+.van-type.rugged:hover, .van-type.rugged.selected {
+    background-color: #115E59;
+}
+
+.van-type.luxury:hover, .van-type.luxury.selected {
+    background-color: #161616;
+}
+
+.van-type.clear-filters {
+    margin-left: -20px;
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    text-decoration: underline;
+    background-color: transparent;
+    color: #4D4D4D;
+}
+/* van Details Section */
+.vans--profile {
+    padding: 40px 20px;
+    
+}
+.vans--profile img {
+    width: 100%;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    -moz-box-shadow: 2px 2px 7px 0px rgba(166,166,166,0.75);
+    -webkit-box-shadow: 2px 2px 7px 0px rgba(166,166,166,0.75);
+    box-shadow: 2px 2px 7px 0px rgba(166,166,166,0.75);
+}
+.vans--profile h1 {
+    font-weight: 700;
+    color: #161616;
+    font-size: 32px;;
+}
+.vans--profile p:nth-of-type(1) {
+    font-weight: 700;
+    font-size: 24px;
+}
+.day {
+    font-weight: 400;
+    font-size: 20px;
+}
+.vans--profile p:nth-of-type(2) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+.vans--profile button {
+    width: 100%;
+    background: #FF8C38;
+    border-radius: 4.98319px;
+    height: 40px;
+    color: #FFFFFF;
+    font-weight: 500;
+    border: none;
+    margin-top: 25px;
+}
+.back-to-vans {
+    padding: 0 20px;
+    font-weight: 500;
+    font-size: 15.9462px;
+    text-decoration: underline;
+}
+/* Host layouts */
+.host-layouts {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px 30px;
+}
+.host-layouts a {
+    font-weight: 500;
+    font-size: 18px;
+    color: #4D4D4D;
+}
+.host-layouts a:focus, .host-layouts a:hover  {
+    text-decoration: underline;
+    color: #161616;
+}
+/* dashboard section */
+.dashboard  {
+    background: #FFEAD0;
+    border-radius: 5px;
+    padding: 32px 20px;
+    color: #161616;
+}
+.dashboard h4 {
+    font-weight: 700;
+    font-size: 36px;
+    display: block;
+    margin: 0;
+    padding-bottom: 20px;
+}
+.dashboard h1 {
+    font-weight: 800;
+    font-size: 48px;
+    margin-top: 20px;
+}
+.details-container {
+    display: flex;
+    align-items: center;
+    color: #4D4D4D;
+    font-weight: 500;
+    font-size: 16px;
+}
+.details-container span:nth-of-type(2) {
+    margin: 0 0 0 auto;
+}
+.dashboard-stars-container {
+    background: #FFDDB3;
+    border-radius: 5px;
+    padding: 40px 20px;
+}
+
+
+footer {
+    background-color: #161616;
+    color: #AAAAAA;
+    padding: 35px;
+    text-align: center;
+    margin-top: 84px;
+
 }
 
 
