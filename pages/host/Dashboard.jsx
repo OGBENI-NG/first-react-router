@@ -16,7 +16,8 @@ export default function Dashboard() {
             <div className="dashboard-stars-container">
                 <span>Review score</span>
                 <img src={StarIcon} />
-                <span>5.0/5</span>
+                <span>5.0/<span id="five">5</span></span>
+                <span>Details</span>
             </div>
         </div>
     )
