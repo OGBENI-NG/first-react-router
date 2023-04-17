@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+
 export default function HostVans() {
     const [vans, setVans] = useState([])
 
@@ -12,7 +13,7 @@ export default function HostVans() {
     const holdVansDetails = vans.map(van => {
         return (
             <Link 
-                to={`vans/id${van.id}`} 
+                to={`/host/vans/${van.id}`} 
                 key={van.id} 
                 className="hold-single-van-container"
             >

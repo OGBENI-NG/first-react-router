@@ -18,9 +18,18 @@ body {
 main {
     margin-bottom: 84px;
 }
-
-nav {
+/* all flex items */
+nav, 
+.host-layouts, 
+.details-container,
+.hold-vans-list section,
+.hold-single-van-container,
+.dashboard-stars-container,
+.inner-hold-van,
+.details-nav {
     display: flex;
+}
+nav {
     align-items: center;
     padding: 35px 20px;
     background-color: #FFF7ED;
@@ -63,13 +72,13 @@ nav a:nth-of-type(4):hover {
 .home-page {
     background-image: url('./img/image1.png');
     margin: 0;
-    display: inline-block;
-    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    object-fit: cover;
-    padding: 65px 20px;
-   
-    width: 100%;
+    min-height: 350px;
+    color: white;
+    padding: 45px 20px;
 }
 .home-page h1 {
     font-size: 36px;
@@ -134,8 +143,14 @@ nav a:nth-of-type(4):hover {
 
 .vans-names-container .van--name {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     color: #161616;
+    margin-bottom: 0;
+}
+.vans-names-container p:nth-of-type(2) {
+    display: inline-block;
+    padding: 3px 0;
+    
 }
 .van-type {
     height: 34px;
@@ -231,13 +246,19 @@ nav a:nth-of-type(4):hover {
     padding: 0 20px;
     font-weight: 500;
     font-size: 15.9462px;
+    color: #201F1D;
+    
+}
+.back-to-vans span {
+    padding-left: 3px;
+}
+.back-to-vans span:hover {
     text-decoration: underline;
 }
 /* Host layouts */
 .host-layouts {
-    display: flex;
     gap: 20px;
-    padding: 0 20px 30px;
+    padding: 10px 20px 30px;
 }
 .host-layouts a {
     font-weight: 500;
@@ -249,12 +270,13 @@ nav a:nth-of-type(4):hover {
     color: #161616;
     font-weight: 600;
 }
-/* dashboard section */
+/* host dashboard section */
 .dashboard  {
     background: #FFEAD0;
     border-radius: 5px;
-    padding: 32px 20px;
+    padding: 30px 20px;
     color: #161616;
+    margin-top: 10px;
 }
 .dashboard h4 {
     font-weight: 700;
@@ -269,7 +291,6 @@ nav a:nth-of-type(4):hover {
     margin-top: 20px;
 }
 .details-container {
-    display: flex;
     align-items: center;
     color: #4D4D4D;
     font-weight: 500;
@@ -287,13 +308,11 @@ nav a:nth-of-type(4):hover {
     border-radius: 5px;
     padding: 40px 20px;
     font-weight: 700;
-    font-size: 24px;
-    display: flex;
+    font-size: 20px;
     align-items: center;
     color: #161616;
 }
- 
-#five {
+.day-price, section h1 span {
     color: #4D4D4D;
 }
 .dashboard-stars-container img{
@@ -316,14 +335,12 @@ nav a:nth-of-type(4):hover {
      
 }
 .hold-vans-list section {
-    display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 15px;
 }
 
 .hold-single-van-container {
-    display: flex;
     align-items: center;
     background: #FFFFFF;
     border-radius: 6px;
@@ -350,6 +367,71 @@ nav a:nth-of-type(4):hover {
     height: 100%;
     border-radius: 5px;
 }
+
+/* host vans details */
+.host-van-details-container {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 30px 20px;
+
+}
+
+.inner-hold-van img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+.inner-hold-van {
+    align-items: center;
+    gap: 20px;
+    color: #161616;
+}
+
+.inner-hold-van p:nth-of-type(1) {
+    font-weight: 700;
+    font-size: 24;
+    padding-top: 11px;
+}
+/* host van details child link container */
+.details-nav {
+    align-items: center;
+    gap: 25px;
+    padding: 25px 0;
+}
+.details-nav a {
+    color: #4D4D4D;
+    font-weight: 500;
+    font-size: 16.1492px;
+}
+/* host van details info section */
+.host-van-info p:nth-of-type(1){
+    margin-top: 0;
+    
+}
+.host-van-info p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14.3548px;
+    color: #4D4D4D;
+}
+.host-van-info p:nth-of-type(3) {
+    line-height: 21px;
+    margin-bottom: 0;
+}
+strong {
+    color: #161616;
+}
+.host-van-img {
+    width: 103px;
+    height: 101.56px;
+    border-radius: 5px;
+}
+section h1 {
+    margin-top: 0;
+}
+
 
 
 

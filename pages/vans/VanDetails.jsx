@@ -3,20 +3,20 @@ import { useParams, Link } from "react-router-dom"
 
 
 export default function VanDetails() {
-    const params = useParams()
+    const {id} = useParams()
     const [van, setVan] = useState(null)
 
     useEffect(() => {
-        fetch(`/api/vans/${params.id}`)
+        fetch(`/api/vans/${id}`)
         .then(res => res.json())
         .then(data => setVan(data.vans))
-    }, [params.id])
+    }, [id])
 
     return(
         <div className="vans--profile--container">
             {van && 
-                <Link to="/vans" className="back-to-vans">
-                    <span>&#x2190;</span> Back to all vans
+                <Link to="/vans" className="back-to-vans">&larr; 
+                    <span>Back to all vans</span> 
                 </Link>
             }
             {van ? (
