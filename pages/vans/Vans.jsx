@@ -19,7 +19,7 @@ export default function Vans() {
   const vansElements = displayVans.map(van => {
     return (
       <div className="vans-pre-setup" key={van.id}>
-        <Link to={`/vans/${van.id}`}>
+        <Link to={van.id} state={{search: searchParams.toString()}}>
           <img src={van.imageUrl} />
           <div className="vans-names-container">
             <p className="van--name">{van.name}</p>
@@ -31,34 +31,46 @@ export default function Vans() {
     )
   })
 
+  //filter van function
+  function handleFilterChange(key, value) {
+    setSearchParams(prevParams => {
+      if(value === null) {
+        prevParams.delete(key)
+      } else {
+        prevParams.set(key, value)
+      }
+      return prevParams
+    })
+  }
+
   return (
     <div className="van-main-container">
       <h3>Explore our van options</h3>
       <div className="van-filter-container">
         <button  
-          className="van-type simple"
-          onClick={() => setSearchParams({type: 'simple'})}
+          onClick={() => handleFilterChange('type', 'simple')}
+          className={`van-type simple ${filterVans === 'simple' ? 'selected' : '' }`}
         >
           Simple
         </button>
         <button  
-          className="van-type luxury"
-          onClick={() => setSearchParams({type: 'luxury'})}
+          onClick={() => handleFilterChange('type', 'luxury')}
+          className={`van-type luxury ${filterVans === 'luxury' ? 'selected' : ''}`}
         >
           Luxury
         </button>
         <button  
-          className="van-type rugged"
-          onClick={() => setSearchParams({type: 'rugged'})}
+          onClick={() => handleFilterChange('type', 'rugged')}
+          className={`van-type rugged ${filterVans === 'rugged' ? 'selected' : ''}`}
         >
           Rugged
         </button>
-        <button  
+        {filterVans ? ( <button  
           className="van-type clear-filters"
-          onClick={() => setSearchParams({})}
+          onClick={() => handleFilterChange('type', null)}
         >
-          Clear
-        </button>
+          Clear Filters
+        </button>) : null}
       </div>
       <div className="vans-list-container">
         {vansElements}

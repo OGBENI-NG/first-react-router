@@ -15,7 +15,11 @@ export default function VanDetails() {
     return(
         <div className="vans--profile--container">
             {van && 
-                <Link to="/vans" className="back-to-vans">&larr; 
+                <Link 
+                    to=".." 
+                    className="back-to-vans"
+                    relative="path"
+                >&larr; 
                     <span>Back to all vans</span> 
                 </Link>
             }

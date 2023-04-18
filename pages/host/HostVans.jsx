@@ -13,7 +13,7 @@ export default function HostVans() {
     const holdVansDetails = vans.map(van => {
         return (
             <Link 
-                to={`/host/vans/${van.id}`} 
+                to={van.id} 
                 key={van.id} 
                 className="hold-single-van-container"
             >
