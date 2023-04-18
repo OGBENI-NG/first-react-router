@@ -33,7 +33,7 @@ export default function Vans() {
 
   return (
     <div className="van-main-container">
-      <h1>Explore our van options</h1>
+      <h3>Explore our van options</h3>
       <div className="van-filter-container">
         <button  
           className="van-type simple"

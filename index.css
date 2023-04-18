@@ -134,6 +134,10 @@ nav a:nth-of-type(4):hover {
 .van-main-container {
     padding-inline: 23px
 }
+.van.van-main-container h3 {
+    font-weight: 700;
+    font-size: 32px;
+}
 .vans-list-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
