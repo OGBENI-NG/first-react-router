@@ -203,11 +203,11 @@ button {
 .van-type.clear-filters {
     margin-left: auto;
     height: 34px;
-    padding: 6px 12px;
     font-style: normal;
+    text-align: center;
     font-weight: 500;
+    font-family: 'Inter', sans-serif;
     border: none;
-    border-radius: 5px;
     text-decoration: underline;
     background-color: transparent;
     color: #4D4D4D;

@@ -36,13 +36,13 @@ export default function Vans() {
       <h1>Explore our van options</h1>
       <div className="van-filter-container">
         <button  
-          className="van-type rugged"
+          className="van-type simple"
           onClick={() => setSearchParams({type: 'simple'})}
         >
           Simple
         </button>
         <button  
-          className="van-type rugged"
+          className="van-type luxury"
           onClick={() => setSearchParams({type: 'luxury'})}
         >
           Luxury
