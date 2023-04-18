@@ -57,7 +57,7 @@ export default function Vans() {
           className="van-type clear-filters"
           onClick={() => setSearchParams({})}
         >
-          Clear filters
+          Clear
         </button>
       </div>
       <div className="vans-list-container">
