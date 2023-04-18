@@ -25,6 +25,7 @@ nav,
 .hold-vans-list section,
 .hold-single-van-container,
 .dashboard-stars-container,
+.van-filter-container,
 .inner-hold-van,
 .details-nav {
     display: flex;
@@ -140,6 +141,15 @@ nav a:nth-of-type(4):hover {
     gap: 34px;
     margin-top: 57px;
 }
+.van-filter-container {
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+   
+}
+button {
+    border: none;
+}
 
 .vans-names-container .van--name {
     font-weight: 600;
@@ -147,6 +157,7 @@ nav a:nth-of-type(4):hover {
     color: #161616;
     margin-bottom: 0;
 }
+
 .vans-names-container p:nth-of-type(2) {
     display: inline-block;
     padding: 3px 0;
@@ -154,12 +165,13 @@ nav a:nth-of-type(4):hover {
 }
 .van-type {
     height: 34px;
-    padding: 6px 26px;
+    padding: 6px 12px;
     font-style: normal;
     font-weight: 500;
     text-align: center;
     border-radius: 5px;
     background-color: #FFEAD0;
+    font-size: 16px;
     color: #4D4D4D;
     transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -189,9 +201,9 @@ nav a:nth-of-type(4):hover {
 }
 
 .van-type.clear-filters {
-    margin-left: -20px;
+    margin-left: auto;
     height: 34px;
-    padding: 6px 26px;
+    padding: 6px 12px;
     font-style: normal;
     font-weight: 500;
     border: none;
