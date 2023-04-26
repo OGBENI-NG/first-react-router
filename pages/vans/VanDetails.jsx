@@ -1,29 +1,32 @@
-import React, { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
+import React, { Suspense } from "react"
+import { Link, useLocation, useLoaderData, defer, Await } from "react-router-dom"
+import { getVans } from "../../api"
 
+
+export function loader({params}) {
+    return defer({van: getVans(params.id)})
+}
 
 export default function VanDetails() {
-    const {id} = useParams()
-    const [van, setVan] = useState(null)
+    const location = useLocation()
+    const promiseData = useLoaderData()
 
-    useEffect(() => {
-        fetch(`/api/vans/${id}`)
-        .then(res => res.json())
-        .then(data => setVan(data.vans))
-    }, [id])
+    function renderVanDetails(van)  {
+        //conditionally joining functions
+        //const search = location.state && location.state.search || ''
+        const search = location.state?.search || ''
+        const type = location.state?.type || 'all'
+        return (
 
-    return(
-        <div className="vans--profile--container">
-            {van && 
+            <>
                 <Link 
-                    to=".." 
+                    to={`..${search}`} 
                     className="back-to-vans"
                     relative="path"
-                >&larr; 
-                    <span>Back to all vans</span> 
+                >
+                    &larr;<span>Back to {type} vans</span> 
                 </Link>
-            }
-            {van ? (
+                
                 <div className="vans--profile">
                     <img src={van.imageUrl} />
                     <span className={`van-type ${van.type} selected`}>{van.type}</span>
@@ -32,7 +35,16 @@ export default function VanDetails() {
                     <p>{van.description}</p>
                     <button>Rent this van</button>
                 </div>
-            ) : <h2>loading...</h2>}
+            </>
+        )
+    }
+    return(
+        <div className="vans--profile--container">
+            <Suspense fallback={<h2>loading vans details</h2>}>
+                <Await resolve={promiseData.van}>
+                    {renderVanDetails}
+                </Await>
+            </Suspense>
         </div>
     )
 }
