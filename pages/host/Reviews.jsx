@@ -1,4 +1,5 @@
 import React from "react"
+//import { ratingImg } from "./img/rating.png" 
 
 
 export default function Reviews() {
@@ -29,7 +30,7 @@ export default function Reviews() {
             </div>
             <img
                 className="graph"
-                src="/pages/pageImg/rating.png"
+                src="../img/rating.png"
                 alt="Review graph"
             />
             <h3>Reviews (2)</h3>
