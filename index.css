@@ -23,7 +23,8 @@ body {
 main {
     margin-bottom: 84px;
 }
-/* all flex items */
+
+/** ALL FLEX ITEM **/
 nav, 
 .host-layouts, 
 .details-container,
@@ -31,8 +32,12 @@ nav,
 .hold-single-van-container,
 .dashboard-stars-container,
 .van-filter-container,
+.about-transaction,
 .inner-hold-van,
-.details-nav {
+.price-history,
+.details-nav,
+.info,
+.top {
     display: flex;
 }
 nav {
@@ -112,12 +117,54 @@ nav a:nth-of-type(4):hover {
     border-radius: 5px;
     cursor: pointer;
     transition: transform .1s ease-in-out;
-    
 }
 .active--link {
     font-weight: 600;
     text-decoration: underline;
     color: #161616;
+}
+
+/** ABOUT PAGE **/
+.about-pic {
+    width: 100%;
+}
+.about-page-content {
+    padding: 20px;
+    color: #161616;
+    
+}
+.about-page-content h4 {
+    line-height: 38px;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 34px 0;
+    
+}
+.about-page-content p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+}
+.about-page-cta {
+    background-color: #FFCC8D;
+    color: #161616;
+    margin: 0 20px;
+    border-radius: 5px;
+    padding: 32px;
+    margin-bottom: 50px;
+}
+.about-page-cta p {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0;
+}
+.about-page-cta button {
+    background-color: #161616;
+    width: 65%;
+}
+.about-page-cta .link-button a{
+    color: white;
 }
 
 /* Van section */
@@ -176,27 +223,21 @@ button {
 .van-type:hover {
     color: #FFEAD0;
 }
-
 .van-type:focus {
     outline: none;
 }
-
 .van-type.selected {
     color: #FFEAD0;
 }
-
 .van-type.simple:hover, .van-type.simple.selected {
     background-color: #E17654;
 }
-
 .van-type.rugged:hover, .van-type.rugged.selected {
     background-color: #115E59;
 }
-
 .van-type.luxury:hover, .van-type.luxury.selected {
     background-color: #161616;
 }
-
 .van-type.clear-filters {
    margin-right: auto;
     height: 34px;
@@ -209,10 +250,10 @@ button {
     background-color: transparent;
     color: #4D4D4D;
 }
+
 /* van Details Section */
 .vans--profile {
     padding: 40px 20px;
-    
 }
 .vans--profile img {
     width: 100%;
@@ -264,6 +305,7 @@ button {
 .back-to-vans span:hover {
     text-decoration: underline;
 }
+
 /* Host layouts */
 .host-layouts {
     gap: 20px;
@@ -279,6 +321,7 @@ button {
     color: #161616;
     font-weight: 600;
 }
+
 /* host dashboard section */
 .dashboard  {
     background: #FFEAD0;
@@ -308,8 +351,8 @@ button {
 .details-container span:nth-of-type(2) {
     color: #161616;
 }
-.details-container span:nth-of-type(2),
-.dashboard-stars-container span:nth-of-type(3) {
+.details-container a:nth-of-type(2),
+.dashboard-stars-container a:nth-of-type(3) {
     margin: 0 0 0 auto;
 }
 .dashboard-stars-container {
@@ -327,10 +370,25 @@ button {
 .dashboard-stars-container img{
     padding-left: 12px;
 }
-.dashboard-stars-container span:nth-of-type(2) {
-    padding-left: 3px;
+
+.top {
+    align-items: center;
+    margin-bottom: 15px;
 }
-.dashboard-stars-container span:nth-of-type(3) {
+.top a {
+    margin-left: auto;
+}
+.host-dashboard-vans {
+    padding: 30px 20px;
+}
+.host-dash-vans {
+    margin-bottom: 20px;
+}
+.view {
+    margin-left: auto;
+}
+.details {
+    margin-left: auto;
     font-weight: 500;
     font-size: 16px;
 }
@@ -348,7 +406,6 @@ button {
     padding: 20px;
     gap: 15px;
 }
-
 .hold-single-van-container {
     align-items: center;
     background: #FFFFFF;
@@ -385,7 +442,6 @@ button {
     margin: 30px 20px;
 
 }
-
 .inner-hold-van img {
     width: 150px;
     height: 150px;
@@ -397,12 +453,12 @@ button {
     gap: 20px;
     color: #161616;
 }
-
 .inner-hold-van p:nth-of-type(1) {
     font-weight: 700;
     font-size: 24;
     padding-top: 11px;
 }
+
 /* host van details child link container */
 .details-nav {
     align-items: center;
@@ -414,10 +470,10 @@ button {
     font-weight: 500;
     font-size: 16.1492px;
 }
+
 /* host van details info section */
 .host-van-info p:nth-of-type(1){
     margin-top: 0;
-    
 }
 .host-van-info p {
     font-style: normal;
@@ -440,18 +496,95 @@ strong {
 section h1 {
     margin-top: 0;
 }
+
+/* host van reviews section */
+.host-reviews {
+    padding: 20px;
+}
+.graph {
+    width: 100%;
+}
+.icon-star {
+    margin-top: 20px;
+}
+.info .name {
+    padding-right: 5px;
+    font-weight: 600;
+}
+.info .date {
+    color: #8C8C8C;
+}
+.review-txt {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #161616;
+}
+
+/* host vans income section */
+.income-container{
+    padding: 0 20px  30px;
+    color: #161616;
+}
+.income-container img {
+    width: 100%;
+}
+.income-container h3 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 36px;
+}
+.income-container p {
+    color: #4D4D4D;
+    margin-bottom: 32px;
+}
+.income-container h1 {
+    margin-bottom: 52px;
+}
+.income-container p span {
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 16px;
+}
+.about-transaction {
+    align-items: baseline;
+    margin-top: 30px;
+}
+.about-transaction h4 {
+    font-weight: 700;
+    font-size: 18px;
+}
+.about-transaction p{
+    margin-left: auto;
+}
+.price-history {
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 35px 25px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+.price-history h2 {
+    margin: 0;
+}
+.price-history p {
+    margin: 0 0 0 auto;
+}
+
 /* NotFound  page */
 .not-found-container {
     padding-inline: 26px;
     margin-top: 104px;
 }
-
 .not-found-container .link-button {
     width: 100%;
     background-color: #161616;
     color: white;
     
 }
+
 /* error-page 400 */
 .error-page {
     text-align: center;
@@ -461,7 +594,6 @@ section h1 {
 .error-page pre {
     color:  #4d4d4db6;
     position: relative;
-    
 }
 
 /* form section */
@@ -471,14 +603,12 @@ section h1 {
     align-items: center;
     padding-inline: 27px;
 }
-
 .login-form {
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 500px;    
 }
-
 .login-form > input {
     border: 1px solid rgba(209, 213, 219);
     height: 40px;
@@ -487,20 +617,16 @@ section h1 {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     font-weight: 400;
 }
-
 .login-form > input:focus {
     outline: none;
 }
-
 .login-form > input:first-of-type {
     border-radius: 6px 6px 0px 0px;
 }
-
 .login-form > input:last-of-type {
     border-radius: 0px 0px 6px 6px;
     border-top: none;
 }
-
 .login-form > button {
     background-color: #FF8C38;
     border: none;
@@ -517,53 +643,16 @@ section h1 {
     height: 24px;
 }
 
-/*** ABOUT PAGE ***/
-.about-hero-image {
-    max-width: 100%;
+/* loading state */
+.loading {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+    bottom: 60%;
+    margin: auto;
 }
 
-.about-page-content {
-    padding: 20px;
-    color: #161616;
-    
-}
-
-.about-page-content h4 {
-    line-height: 38px;
-    font-weight: 700;
-    font-size: 32px;
-    margin: 34px 0;
-    
-}
-
-.about-page-content p {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-}
-
-.about-page-cta {
-    background-color: #FFCC8D;
-    color: #161616;
-    margin: 0 20px;
-    border-radius: 5px;
-    padding: 32px;
-    margin-bottom: 50px;
-}
-
-.about-page-cta p {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 30px;
-    margin: 0;
-}
-.about-page-cta button {
-    background-color: #161616;
-    width: 65%;
-}
-.about-page-cta .link-button a{
-    color: white;
-}
 
 footer {
     background-color: #161616;

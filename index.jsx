@@ -13,7 +13,7 @@ import "./server"
 import Vans, {loader as vanLoader} from './pages/vans/Vans'
 import VanDetails, {loader as vanDetailsLoader} from './pages/vans/VanDetails'
 import Layouts from './components/Layouts'
-import Dashboard from './pages/host/Dashboard'
+import Dashboard, {loader as dashboardVanLoader} from './pages/host/Dashboard'
 import Income from './pages/host/Income'
 import Reviews from './pages/host/Reviews'
 import HostLayouts from './components/HostLayouts'
@@ -53,6 +53,7 @@ const router = createBrowserRouter(
         <Route 
           index 
           element={<Dashboard />}
+          loader={dashboardVanLoader}
           // loader={async () => await requireAuth()}
         />
         <Route 

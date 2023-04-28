@@ -1,6 +1,7 @@
 import React, { Suspense } from "react"
 import { Link, useSearchParams, useLoaderData, defer, Await } from "react-router-dom"
 import { getVans } from "../../api"
+import { Dna } from "react-loader-spinner"
 
 export function loader() {
   return defer({vans: getVans()})
@@ -85,7 +86,8 @@ export default function Vans() {
   }
   return(
     <div className="van-main-container">
-      <Suspense fallback={<h2>loading vans...</h2>}>
+      <Suspense fallback={<Dna wrapperClass="
+            loading"/>}>
         <Await resolve={promiseData.vans}>
           {renderVansElement}
         </Await>

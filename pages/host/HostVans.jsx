@@ -22,7 +22,7 @@ export default function HostVans() {
                     className="list-img-container" 
                     key={van.id}
                 >
-                    <img src={van.imageUrl}/>
+                    <img src={van.imageUrl} alt={`Photo of ${van.name}`}/>
                 </div>
                 <div className="van-info-container">
                     <h3>{van.name}</h3>

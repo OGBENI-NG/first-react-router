@@ -1,5 +1,7 @@
 import React from "react"
-//import { ratingImg } from "./img/rating.png" 
+import  ratingImg  from "/pages/pageImg/rating.png"
+import  ratingStar from "/pages/pageImg/star.png"
+
 
 
 export default function Reviews() {
@@ -19,7 +21,11 @@ export default function Reviews() {
             id: "2",
         },
     ]
-    
+
+   
+
+
+
     return (
         <section className="host-reviews">
             <div className="top-text">
@@ -30,21 +36,25 @@ export default function Reviews() {
             </div>
             <img
                 className="graph"
-                src="../img/rating.png"
+                src={ratingImg}
                 alt="Review graph"
             />
             <h3>Reviews (2)</h3>
             {reviewsData.map((review) => (
                 <div key={review.id}>
                     <div className="review">
-                        {/* {[...Array(review.rating)].map((_, i) => (
-                            <BsStarFill className="review-star" key={i} />
-                        ))} */}
+                        <div className="icon-star">
+                            <img src={ratingStar}/>
+                            <img src={ratingStar}/>
+                            <img src={ratingStar}/>
+                            <img src={ratingStar}/>
+                            <img src={ratingStar}/>
+                        </div>
                         <div className="info">
                             <p className="name">{review.name}</p>
                             <p className="date">{review.date}</p>
                         </div>
-                        <p>{review.text}</p>
+                        <p className="review-txt">{review.text}</p>
                     </div>
                     <hr />
                 </div>
