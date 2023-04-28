@@ -1,6 +1,7 @@
 import React, {Suspense} from "react"
 import { Link, useLoaderData, defer, Await } from "react-router-dom"
 import { getHostVans } from "../../api"
+import { Dna } from "react-loader-spinner"
 //import { requireAuth } from "../../utils"
 
 export async function loader() {
@@ -42,7 +43,8 @@ export default function HostVans() {
     return (
         <div className="hold-van-list">
             <h4>Your listed vans</h4>
-            <Suspense fallback={<h2>loading vans list</h2>}>
+            <Suspense fallback={<Dna wrapperClass="
+            loading"/>}>
                 <Await resolve={promiseData.vans}>
                     {renderVansData}
                 </Await>

@@ -364,13 +364,13 @@ button {
     align-items: center;
     color: #161616;
 }
+
 .day-price, section h1 span {
     color: #4D4D4D;
 }
 .dashboard-stars-container img{
     padding-left: 12px;
 }
-
 .top {
     align-items: center;
     margin-bottom: 15px;
@@ -642,16 +642,25 @@ section h1 {
 .login-icon {
     height: 24px;
 }
+.dash-list-van-details-con h3{
+    font-size: 16px;
+    color: #161616;
+}
 
 /* loading state */
-.loading {
+.loading, .loading-two {
     position: absolute;
     left: 0;
     right: 0;
-    top: 30%;
-    bottom: 60%;
+    top: 0;
+    bottom: 0;
     margin: auto;
+    overflow: hidden;
 }
+.loading-two {
+    top: 100%;
+}
+
 
 
 footer {

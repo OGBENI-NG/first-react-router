@@ -2,6 +2,7 @@ import React, { Suspense } from "react"
 import StarIcon from "../pageImg/star.png"
 import { getHostVans } from "../../api"
 import { Link, defer, useLoaderData, Await } from "react-router-dom"
+import { Dna } from "react-loader-spinner"
 
 export async function loader() {
     return defer({vans: getHostVans()})
@@ -19,7 +20,7 @@ export default function Dashboard() {
                 >
                     <img src={van.imageUrl} alt={`Photo of ${van.name}`}/>
                 </div>
-                <div className="van-info-container">
+                <div className="dash-list-van-details-con">
                     <h3>{van.name}</h3>
                     <p>${van.price}/day</p>
                 </div>
@@ -68,7 +69,9 @@ export default function Dashboard() {
                     <h2>Your listed vans</h2>
                     <Link to="vans">View all</Link>
                 </div>
-                <Suspense fallback={<h2>loading...</h2>}>
+                <Suspense 
+                    fallback={<Dna wrapperClass="loading-two"/>}
+                >
                     <Await resolve={loaderData.vans}>
                         {renderVansElements}
                     </Await>
